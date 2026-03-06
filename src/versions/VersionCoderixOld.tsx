@@ -118,28 +118,28 @@ const Projects = () => {
       title: "\"멘탈이 무너져도\n전략이 있으면\n다시 만날 수 있습니다.\"",
       desc: "연락하고 싶은 충동을 참고\n전략대로 실행한 결과\n상대가 먼저 재회를 제안한 실제 사례",
       tags: ["#재회성공", "#이별후전략", "#감정코칭"],
-      img: "/assets/review-01.png.PNG",
+      img: "/assets/chat-01.png",
       imgStyle: { objectPosition: "center top" }
     },
     {
       title: "\"읽씹하던 썸이 먼저\n만나자고 했습니다.\"",
       desc: "불안하게 설레발 치지 않고\n상황 판단 + 타이밍 피드백으로\n관계 주도권을 가져온 실제 사례",
       tags: ["#썸전략", "#관계역전", "#심리분석"],
-      img: "/assets/rivew-05.png.PNG",
+      img: "/assets/chat-02.png",
       imgStyle: { objectPosition: "center bottom" }
     },
     {
       title: "\"반복되는 이별\n패턴 끊어내기\"",
       desc: "매번 같은 이유로\n헤어지는 커플을 위한\n근본적 원인 해결",
       tags: ["#연애패턴", "#자존감회복", "#장기연애"],
-      img: "/assets/review-03.png",
+      img: "/assets/chat-03.png",
       imgStyle: { objectPosition: "center 80%" }
     },
     {
       title: "\"매일 반복되는 부부 싸움\n대화가 안 통할 때\"",
       desc: "감정적 대화 패턴을 분석하고\n관계 회복의 실마리를 찾은 실제 상담 사례",
       tags: ["#부부갈등", "#소통단절", "#관계회복"],
-      img: "/assets/review-04.png.PNG"
+      img: "/assets/chat-04.png"
     }
   ];
 
@@ -159,7 +159,6 @@ const Projects = () => {
                 alt={p.title} 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-70 group-hover:opacity-100"
                 style={p.imgStyle}
-                onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/case${i}/800/600`; }}
               />
             </div>
             <div className="text-left">
