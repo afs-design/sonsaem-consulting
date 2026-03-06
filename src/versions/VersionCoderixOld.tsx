@@ -38,10 +38,10 @@ const Header = () => {
         
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-10 text-sm font-bold tracking-widest uppercase">
-          <a href="#projects" className="text-text-secondary hover:text-white transition-colors">Projects</a>
-          <a href="#services" className="text-text-secondary hover:text-white transition-colors">Services</a>
-          <a href="#about" className="text-text-secondary hover:text-white transition-colors">About</a>
-          <a href={KAKAO_LINK} className="text-white border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-bg-primary transition-all">Contact</a>
+          <a href="#projects" className="text-text-secondary hover:text-white transition-colors">CASES — 상담 사례</a>
+          <a href="#services" className="text-text-secondary hover:text-white transition-colors">PROGRAM — 상담 프로그램</a>
+          <a href="#about" className="text-text-secondary hover:text-white transition-colors">ABOUT — 소개</a>
+          <a href={KAKAO_LINK} className="text-white border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-bg-primary transition-all">RESERVATION — 상담 예약</a>
         </nav>
 
         {/* Mobile Nav Toggle */}
@@ -59,10 +59,10 @@ const Header = () => {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 w-full bg-bg-secondary border-b border-white/10 py-6 px-6 flex flex-col gap-6 md:hidden"
           >
-            <a href="#projects" onClick={() => setMenuOpen(false)} className="text-xl font-bold">Projects</a>
-            <a href="#services" onClick={() => setMenuOpen(false)} className="text-xl font-bold">Services</a>
-            <a href="#about" onClick={() => setMenuOpen(false)} className="text-xl font-bold">About</a>
-            <a href={KAKAO_LINK} onClick={() => setMenuOpen(false)} className="text-accent text-xl font-bold">Contact</a>
+            <a href="#projects" onClick={() => setMenuOpen(false)} className="text-xl font-bold">CASES — 상담 사례</a>
+            <a href="#services" onClick={() => setMenuOpen(false)} className="text-xl font-bold">PROGRAM — 상담 프로그램</a>
+            <a href="#about" onClick={() => setMenuOpen(false)} className="text-xl font-bold">ABOUT — 소개</a>
+            <a href={KAKAO_LINK} onClick={() => setMenuOpen(false)} className="text-accent text-xl font-bold">RESERVATION — 상담 예약</a>
           </motion.div>
         )}
       </AnimatePresence>
