@@ -122,9 +122,9 @@ const Projects = () => {
       imgStyle: { objectPosition: "center top" }
     },
     {
-      title: "\"읽씹하던 썸이 먼저\n만나자고 했습니다.\"",
-      desc: "불안하게 설레발 치지 않고\n상황 판단 + 타이밍 피드백으로\n관계 주도권을 가져온 실제 사례",
-      tags: ["#썸전략", "#관계역전", "#심리분석"],
+      title: "\"방향을 바꾸니\n연애가 다시 시작됐습니다.\"",
+      desc: "감정 정리부터 새로운 만남까지\n하나의 상담으로\n흐름이 바뀐 실제 사례",
+      tags: ["#연애설계", "#새출발", "#1:1컨설팅"],
       img: "/assets/chat-02.png",
       imgStyle: { objectPosition: "center bottom" }
     },
