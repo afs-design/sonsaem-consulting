@@ -118,28 +118,33 @@ const Projects = () => {
       title: "\"멘탈이 무너져도\n전략이 있으면\n다시 만날 수 있습니다.\"",
       desc: "연락하고 싶은 충동을 참고\n전략대로 실행한 결과\n상대가 먼저 재회를 제안한 실제 사례",
       tags: ["#재회성공", "#이별후전략", "#감정코칭"],
-      img: "/assets/chat-01.png",
-      imgStyle: { objectPosition: "center top" }
+      img: "/assets/review-01.png",
+      imgStyle: { objectPosition: "center 100%", imageRendering: "-webkit-optimize-contrast" as const },
+      scale: 0.96
     },
     {
-      title: "\"방향을 바꾸니\n연애가 다시 시작됐습니다.\"",
-      desc: "감정 정리부터 새로운 만남까지\n하나의 상담으로\n흐름이 바뀐 실제 사례",
-      tags: ["#연애설계", "#새출발", "#1:1컨설팅"],
-      img: "/assets/chat-02.png",
-      imgStyle: { objectPosition: "center bottom" }
+      title: "\"읽씹하던 썸이\n먼저 만나자고 했습니다.\"",
+      desc: "불안하게 설레발치지 않고\n상황 판단 + 타이밍 피드백으로\n관계 주도권을 가져온 실제 사례",
+      tags: ["#썸전략", "#관계역전", "#심리분석"],
+      img: "/assets/review-02.png",
+      imgStyle: { objectPosition: "center 100%", imageRendering: "-webkit-optimize-contrast" as const },
+      scale: 0.95
     },
     {
       title: "\"반복되는 이별\n패턴 끊어내기\"",
       desc: "매번 같은 이유로\n헤어지는 커플을 위한\n근본적 원인 해결",
       tags: ["#연애패턴", "#자존감회복", "#장기연애"],
-      img: "/assets/chat-03.png",
-      imgStyle: { objectPosition: "center 80%" }
+      img: "/assets/review-03.png",
+      imgStyle: { objectPosition: "center 100%", imageRendering: "-webkit-optimize-contrast" as const },
+      scale: 1.11
     },
     {
-      title: "\"매일 반복되는 부부 싸움\n대화가 안 통할 때\"",
-      desc: "감정적 대화 패턴을 분석하고\n관계 회복의 실마리를 찾은 실제 상담 사례",
-      tags: ["#부부갈등", "#소통단절", "#관계회복"],
-      img: "/assets/chat-04.png"
+      title: "\"방향을 바꾸니\n연애가 다시 시작됐습니다.\"",
+      desc: "감정정리부터 새로운 만남까지\n하나의 상담으로\n흐름이 바뀐 실제 사례",
+      tags: ["#연애설계", "#새출발", "#1:1컨설팅"],
+      img: "/assets/review-04.png",
+      imgStyle: { objectPosition: "center 100%", imageRendering: "-webkit-optimize-contrast" as const },
+      scale: 1
     }
   ];
 
@@ -153,14 +158,17 @@ const Projects = () => {
         {projects.map((p, i) => (
           <FadeIn key={i} delay={i * 0.1} className={`group cursor-pointer ${i % 2 !== 0 ? 'md:mt-32' : ''}`}>
             <div className="overflow-hidden rounded-2xl mb-8 bg-bg-secondary aspect-[4/3] relative">
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay"></div>
-              <img 
-                src={p.img} 
-                alt={p.title} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-70 group-hover:opacity-100"
-                style={p.imgStyle}
-              />
+              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay pointer-events-none"></div>
+              <div style={{ width: '100%', height: '100%', transform: `scale(${p.scale})` }}>
+                <img 
+                  src={p.img} 
+                  alt={p.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  style={p.imgStyle}
+                />
+              </div>
             </div>
+
             <div className="text-left">
               <h3 className="text-[26px] sm:text-3xl md:text-5xl font-bold mb-4 md:mb-5 text-accent transition-colors whitespace-pre-line leading-[1.3] md:leading-tight">{p.title}</h3>
               <p className="text-text-secondary text-base sm:text-lg md:text-2xl mb-6 md:mb-8 whitespace-pre-line leading-relaxed">{p.desc}</p>
@@ -322,7 +330,6 @@ const About = () => (
             className="w-full h-full object-cover"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.5 }}
-            onError={(e) => { e.currentTarget.src = "https://picsum.photos/seed/suit/800/1000"; }}
           />
         </div>
         
