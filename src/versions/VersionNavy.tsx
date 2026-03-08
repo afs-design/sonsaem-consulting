@@ -2,6 +2,28 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'motion/react';
 import { MessageCircle, ExternalLink, ChevronDown, Star, CheckCircle2, ArrowRight } from 'lucide-react';
 
+import heroBanner from '../assets/hero-banner.png';
+import profileSuit from '../assets/profile-suit.jpg';
+import case01 from '../assets/case-01.png';
+import case02 from '../assets/case-02.png';
+import case03 from '../assets/case-03.png';
+import case04 from '../assets/case-04.png';
+import review01 from '../assets/review-01.png';
+import review02 from '../assets/review-02.png';
+import review03 from '../assets/review-03.png';
+import review04 from '../assets/review-04.png';
+
+const images: Record<string, string> = {
+  'case-01': case01,
+  'case-02': case02,
+  'case-03': case03,
+  'case-04': case04,
+  'review-01': review01,
+  'review-02': review02,
+  'review-03': review03,
+  'review-04': review04,
+};
+
 const KMONG_LINK = "https://kmong.com/gig/393280#194";
 const KAKAO_LINK = "#"; // Placeholder
 
@@ -90,7 +112,7 @@ const Hero = () => (
       <FadeIn delay={0.2} className="w-full h-full min-h-[400px] md:min-h-[600px] relative">
         <div className="absolute inset-0 bg-navy-soft rounded-[2rem] md:rounded-[3rem] transform rotate-3 scale-105 opacity-50"></div>
         <img 
-          src="/assets/hero-banner.png" 
+          src={heroBanner} 
           alt="희망고문 없는 상담" 
           className="w-full h-full object-cover rounded-[2rem] md:rounded-[3rem] shadow-2xl relative z-10"
           onError={(e) => {
@@ -136,7 +158,7 @@ const BrandIntro = () => (
       <FadeIn className="w-full md:w-1/2">
         <div className="aspect-[3/4] overflow-hidden bg-navy-soft rounded-2xl border border-divider">
           <img 
-            src="/assets/profile-suit.jpg" 
+            src={profileSuit} 
             alt="손쌤 프로필" 
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 opacity-90 hover:opacity-100"
             onError={(e) => {
@@ -199,7 +221,7 @@ const CaptureSlider = ({ title, prefix, count }: { title: string, prefix: string
           <div key={i} className="min-w-[280px] md:min-w-[320px] shrink-0 mx-2">
             <div className="bg-white overflow-hidden border border-gray-200 relative rounded-xl shadow-sm">
               <img 
-                src={`/assets/${prefix}-0${(i % count) + 1}.png`} 
+                src={images[`${prefix}-0${(i % count) + 1}`]} 
                 alt={`${title} ${(i % count) + 1}`}
                 className="w-full h-auto object-contain"
                 onError={(e) => {
@@ -260,7 +282,7 @@ const Reviews = () => {
             <div key={`img-${i}`} className="min-w-[280px] md:min-w-[320px] shrink-0 mx-2">
               <div className="bg-white overflow-hidden border border-gray-200 relative rounded-xl shadow-sm">
                 <img 
-                  src={`/assets/review-0${(i % 4) + 1}.png`} 
+                  src={images[`review-0${(i % 4) + 1}`]} 
                   alt={`크몽 리뷰 ${(i % 4) + 1}`}
                   className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                   onError={(e) => {

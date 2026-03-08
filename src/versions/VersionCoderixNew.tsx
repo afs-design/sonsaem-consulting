@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'motion/react';
 import { MessageCircle, ChevronDown, Star, CheckCircle2, ArrowRight } from 'lucide-react';
 
+import heroBanner from '../assets/hero-banner.png';
+import profileSuit from '../assets/profile-suit.jpg';
+
 const KAKAO_LINK = "#"; // Placeholder for Kakao
 const DIAGNOSIS_LINK = "#"; // Placeholder for Free Diagnosis
 
@@ -80,7 +83,7 @@ const Hero = () => (
       <FadeIn delay={0.2} className="w-full h-full min-h-[400px] relative hidden md:block">
         <div className="absolute inset-0 bg-bg-secondary rounded-[2rem] transform rotate-3 scale-105 opacity-50 border border-white/10"></div>
         <img 
-          src="/assets/hero-banner.png" 
+          src={heroBanner} 
           alt="재회 골든타임" 
           className="w-full h-full object-cover rounded-[2rem] shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-700"
           onError={(e) => { e.currentTarget.src = "https://picsum.photos/seed/suit/800/1000"; }}
@@ -130,7 +133,7 @@ const BrandIntro = () => (
       <FadeIn className="w-full md:w-5/12">
         <div className="aspect-[3/4] overflow-hidden bg-bg-secondary rounded-2xl border border-white/10 relative">
           <img 
-            src="/assets/profile-suit.jpg" 
+            src={profileSuit} 
             alt="손쌤 프로필" 
             className="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
             onError={(e) => { e.currentTarget.src = "https://picsum.photos/seed/suit/600/800"; }}
